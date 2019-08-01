@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 // import console = require('console');
+import Home from "./screens/Home"
 
 export default class App extends React.Component {
   state = {
@@ -21,9 +22,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Counter {this.state.count} </Text>
-        <Button title="Add" onPress={() => this.add()} />
-        <Button title="Subtract" onPress={() => this.subtract()} />
+        <Home />
       </View>
     );
   }
