@@ -2,18 +2,18 @@ import React from "react";
 import { Text, View, Button } from "react-native";
 import styles from "../styles.js"
 
-export default class Home extends React.Component {
+export default class Search extends React.Component {
   state = {
     count: 10
   };
 
   add = () => {
-    console.log("Home.js: add function");
+    console.log("Search.js: add function");
     let num = this.state.count + 1;
     this.setState({ count: num });
   };
   subtract = () => {
-    console.log("Home.js: subtract function");
+    console.log("Search.js: subtract function");
     let num = this.state.count - 1;
     this.setState({ count: num });
   };
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home {this.state.count} </Text>
+        <Text>Search {this.state.count} </Text>
         <Button title="Add" onPress={() => this.add()} />
         <Button title="Subtract" onPress={() => this.subtract()} />
       </View>
