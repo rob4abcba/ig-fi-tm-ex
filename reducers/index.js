@@ -1,4 +1,4 @@
-export default counter = (state = 0, action) => {
+export default counter = (state = 867, action) => {
     switch (action.type) {
         case "INCREMENT":
             return state + 1

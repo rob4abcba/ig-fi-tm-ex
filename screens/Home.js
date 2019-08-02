@@ -1,8 +1,9 @@
 import React from "react";
 import { Text, View, Button } from "react-native";
-import styles from "../styles.js"
+import styles from "../styles.js";
+import { connect } from "react-redux";
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   state = {
     count: 10
   };
@@ -21,7 +22,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home {this.state.count} </Text>
+        <Text>Home {this.props.counter} </Text>
         <Button title="Add" onPress={() => this.add()} />
         <Button title="Subtract" onPress={() => this.subtract()} />
       </View>
@@ -29,3 +30,10 @@ export default class Home extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+return {
+  counter: state
+}
+}
+
+export default connect(mapStateToProps)(Home)
