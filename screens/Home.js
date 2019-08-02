@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, Button } from "react-native";
 import styles from "../styles.js";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 class Home extends React.Component {
   state = {
@@ -30,10 +31,13 @@ class Home extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators( {add, subtract}, dispatch )
+}
 const mapStateToProps = (state) => {
 return {
   counter: state
 }
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
