@@ -18,10 +18,42 @@ const TabNavigator = createBottomTabNavigator({
           )
       }
   },
-  Search: Search,
-  Upload: Upload,
-  Profile: Profile,
-  Activity: Activity,
+  Search: {
+    screen: Search,
+    navigationOptions: {
+        tabBarLabel: " ",
+        tabBarIcon: () => (
+            <Ionicons name="ios-search" size={32} />
+        )
+    }
+},
+Upload: {
+    screen: Upload,
+    navigationOptions: {
+        tabBarLabel: " ",
+        tabBarIcon: () => (
+            <Ionicons name="ios-add-circle-outline" size={32} />
+        )
+    }
+},
+Activity: {
+    screen: Activity,
+    navigationOptions: {
+        tabBarLabel: " ",
+        tabBarIcon: ( {focused} ) => (
+            <Ionicons name= {focused ? "ios-heart" : "ios-heart-empty"} size={32} />
+        )
+    }
+},
+Profile: {
+    screen: Profile,
+    navigationOptions: {
+        tabBarLabel: " ",
+        tabBarIcon: () => (
+            <Ionicons name="ios-person" size={32} />
+        )
+    }
+},
 });
 
 export default createAppContainer(TabNavigator);
