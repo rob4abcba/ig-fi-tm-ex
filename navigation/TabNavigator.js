@@ -9,11 +9,19 @@ import Profile from "../screens/Profile.js"
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 const TabNavigator = createBottomTabNavigator({
-  Home: Home,
+  Home: {
+      screen: Home,
+      navigationOptions: {
+          tabBarLabel: " ",
+          tabBarIcon: () => (
+              <Ionicons name="ios-home" size={32} />
+          )
+      }
+  },
   Search: Search,
   Upload: Upload,
   Profile: Profile,
-  Activity: Activity
+  Activity: Activity,
 });
 
 export default createAppContainer(TabNavigator);
