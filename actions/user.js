@@ -1,3 +1,6 @@
 export const updateEmail = (email) => {
-    return {type: "ADD", payload: email}
+    return {type: "UPDATE_EMAIL", payload: email}
+}
+export const updatePassword = (password) => {
+    return {type: "UPDATE_PASSWORD", payload: password}
 }
