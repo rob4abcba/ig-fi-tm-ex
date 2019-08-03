@@ -1,5 +1,8 @@
 import {combineReducers} from "redux"
 
+// RL Traditional to have index.js combine reducers
+
+// RL These specific reducers for counter and user can also be defined in separate files then imported into this index.js that combines them.
 const counter = (state = 867, action) => {
     switch (action.type) {
         case "ADD":
@@ -22,6 +25,7 @@ const user = (state = {}, action) => {
     }
 }
 
+// RL Traditional to call your combined reducers something like rootReducer, allReducers, etc.
 const rootReducer = combineReducers({
     counter,
     user
