@@ -31,13 +31,18 @@ class Home extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators( {add, subtract}, dispatch )
-}
-const mapStateToProps = (state) => {
-return {
-  counter: state
-}
-}
+// RL mapStateToProps & mapDispatchToProps = old
+// RL useSelector & useDispatch = new Redux Hooks METHODS.
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ add, subtract }, dispatch);
+};
+const mapStateToProps = state => {
+  return {
+    counter: state
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
